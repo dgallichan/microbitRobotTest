@@ -1,12 +1,27 @@
-input.onButtonPressed(Button.AB, function () {
-    buttonpress = 1
-})
-let buttonpress = 0
-buttonpress = 0
-radio.setGroup(99)
 bitbot.select_model(BBModel.Classic)
+radio.setGroup(99)
+basic.showLeds(`
+    . . # . .
+    . . # . .
+    # # # # #
+    . . # . .
+    . . # . .
+    `)
 bitbot.bbEnableBluetooth(BBBluetooth.btEnable)
-control.waitForEvent(buttonpress, 1)
+bitbot.ledRainbow()
+control.waitMicros(4000000)
+basic.showLeds(`
+    . . # . .
+    . . # . .
+    . # # # .
+    . # . # .
+    # . . . #
+    `)
+while (true) {
+    if (input.buttonIsPressed(Button.AB)) {
+        break;
+    }
+}
 basic.showLeds(`
     . . # . .
     . . # . .
