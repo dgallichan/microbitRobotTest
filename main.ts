@@ -9,7 +9,7 @@ basic.showLeds(`
     `)
 bitbot.bbEnableBluetooth(BBBluetooth.btEnable)
 bitbot.ledRainbow()
-control.waitMicros(4000000)
+basic.pause(2000)
 basic.showLeds(`
     . . # . .
     . . # . .
@@ -31,10 +31,10 @@ basic.showLeds(`
     `)
 bitbot.go(BBDirection.Forward, 60)
 bitbot.ledRainbow()
-control.waitMicros(4000000)
+basic.pause(2000)
 bitbot.stop(BBStopMode.Coast)
 bitbot.ledShift()
-control.waitMicros(4000000)
+basic.pause(2000)
 basic.showLeds(`
     # # # # #
     # . # . #
@@ -43,6 +43,6 @@ basic.showLeds(`
     # # # # #
     `)
 basic.forever(function () {
-    radio.sendNumber(input.compassHeading())
-    control.waitMicros(20000)
+    radio.sendValue("compass", input.compassHeading())
+    basic.pause(500)
 })
