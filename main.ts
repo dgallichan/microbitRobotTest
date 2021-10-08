@@ -7,7 +7,6 @@ basic.showLeds(`
     . . # . .
     . . # . .
     `)
-bitbot.bbEnableBluetooth(BBBluetooth.btEnable)
 bitbot.ledRainbow()
 basic.pause(2000)
 basic.showLeds(`
